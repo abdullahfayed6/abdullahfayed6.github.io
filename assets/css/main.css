@@ -22,9 +22,9 @@
   --background-color: #1f1f1f; /* Background color for the entire website, including individual sections */
   --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ececec; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #8ab4ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #232323; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #310606; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #0b0f1a; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -127,6 +127,11 @@ h6 {
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
   animation: php-email-form-loading 1s linear infinite;
+}
+
+.contact-mailto-form .form-note {
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  font-size: 14px;
 }
 
 @keyframes php-email-form-loading {
@@ -496,7 +501,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 72px 0;
   overflow: clip;
 }
 
@@ -533,7 +538,8 @@ section,
 }
 
 .section-title p {
-  margin-bottom: 0;
+  margin: 0 auto;
+  max-width: 720px;
 }
 
 /*--------------------------------------------------------------
@@ -1232,7 +1238,8 @@ section,
   background-color: var(--surface-color);
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   height: 100%;
   transition: transform 0.3s;
 }
@@ -1246,6 +1253,32 @@ section,
   margin-bottom: 25px;
   position: relative;
   padding-bottom: 15px;
+}
+
+.skills .skill-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.skills .skill-list li {
+  padding-left: 22px;
+  position: relative;
+}
+
+.skills .skill-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 1;
+  top: 2px;
 }
 
 .skills .skills-category h3:after {
@@ -1637,6 +1670,13 @@ section,
   margin-bottom: 15px;
 }
 
+.portfolio .portfolio-wrap .portfolio-info p {
+  margin: 0 0 16px;
+  color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links {
   display: flex;
   gap: 12px;
@@ -1756,6 +1796,12 @@ section,
   margin-bottom: 30px;
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);
   transition: all 0.3s ease;
+}
+
+.services .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 .services .service-card .service-icon {
