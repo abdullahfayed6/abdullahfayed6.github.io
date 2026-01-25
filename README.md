@@ -3,4 +3,4 @@
 Static portfolio site for Abdullah Fayed.
 
 ## Notes
-- The contact form uses a `mailto:` action and does not include a server-side PHP handler.
+- The contact form submits to FormSubmit over HTTPS (no server-side PHP handler in this repo).
