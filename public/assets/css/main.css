@@ -1002,26 +1002,28 @@ section,
   list-style: none;
   padding-left: 0;
   margin: 0;
-  display: grid;
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 10%);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
 }
 
 .skills .skill-list li {
-  padding-left: 22px;
-  position: relative;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
 }
 
-.skills .skill-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-  font-size: 18px;
-  line-height: 1;
-  top: 2px;
+.skills .skill-list li:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
 }
 
 .skills .skills-category h3:after {
