@@ -34,6 +34,17 @@ function fetchAndClean($url, $localUrl) {
     $html = str_replace($localUrl . '/projects/', '/projects/', $html);
     $html = str_replace($localUrl . '/service-details', '/service-details.html', $html);
     $html = str_replace($localUrl . '/starter-page', '/starter-page.html', $html);
+    
+    // Rewrite asset paths to the public directory
+    $html = str_replace($localUrl . '/assets/', '/public/assets/', $html);
+    $html = str_replace('="/assets/', '="/public/assets/', $html);
+    $html = str_replace('=\'/assets/', '=\'/public/assets/', $html);
+    
+    // Rewrite upload paths to the public directory
+    $html = str_replace($localUrl . '/uploads/', '/public/uploads/', $html);
+    $html = str_replace('="/uploads/', '="/public/uploads/', $html);
+    $html = str_replace('=\'/uploads/', '=\'/public/uploads/', $html);
+    
     $html = str_replace($localUrl . '/', '/', $html);
     $html = str_replace($localUrl, '', $html); // catch any trailing references
     
